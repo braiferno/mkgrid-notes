@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mk体育 · 赛事信息与运动数据平台</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f5f0;
+      font-family: Georgia, 'Times New Roman', 'Noto Serif SC', serif;
+      color: #2b2b2b;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      background: #ffffffec;
+      padding: 2.8rem 2rem;
+      margin-bottom: 2.2rem;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+      border-left: 6px solid #b3864b;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #4d3e2c;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #7a6a54;
+      border-top: 1px dashed #dacbb9;
+      padding-top: 1.2rem;
+      margin-top: 0.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .intro-block {
+      background: #ffffff;
+      padding: 2rem 2rem 2.2rem;
+      margin-bottom: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .intro-block p {
+      margin-bottom: 1.2rem;
+      text-indent: 2em;
+    }
+
+    .intro-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    blockquote {
+      background: #f2ede6;
+      border-left: 5px solid #b3864b;
+      margin: 1.6rem 0;
+      padding: 1.2rem 1.6rem;
+      border-radius: 0 10px 10px 0;
+      font-style: normal;
+      color: #3e362e;
+    }
+
+    blockquote p {
+      text-indent: 0;
+      margin-bottom: 0.3rem;
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 0.6rem;
+      font-size: 0.9rem;
+      color: #7a6a54;
+      letter-spacing: 1px;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 2rem 0 1.5rem;
+    }
+
+    .feature-card {
+      background: #fcfaf7;
+      flex: 1 1 200px;
+      padding: 1.4rem 1.2rem;
+      border-radius: 16px;
+      border: 1px solid #e7ddd2;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #4d3e2c;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px dotted #dacbb9;
+      padding-bottom: 0.4rem;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      text-indent: 0;
+    }
+
+    .footnote {
+      background: #eae5db;
+      padding: 1.6rem 2rem;
+      border-radius: 40px 10px 40px 10px;
+      margin-top: 1.8rem;
+      text-align: center;
+      font-size: 1rem;
+      color: #3e362e;
+      border: 1px solid #dacbb9;
+    }
+
+    .footnote a {
+      color: #4d3e2c;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #b3864b;
+      padding-bottom: 1px;
+    }
+
+    .footnote a:hover {
+      color: #b3864b;
+      border-bottom-color: #b3864b;
+    }
+
+    .faq-mini {
+      background: #ffffff;
+      padding: 1.8rem 2rem;
+      border-radius: 14px;
+      margin: 2rem 0 1.2rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #ede7dc;
+      padding-bottom: 0.8rem;
+    }
+
+    .faq-mini details[open] summary {
+      color: #b3864b;
+    }
+
+    .faq-mini summary {
+      font-weight: 500;
+      cursor: pointer;
+      color: #4d3e2c;
+      padding: 0.2rem 0;
+      list-style: inside;
+      font-size: 1.05rem;
+    }
+
+    .faq-mini summary::-webkit-details-marker {
+      color: #b3864b;
+    }
+
+    .faq-mini p {
+      margin: 0.6rem 0 0.2rem 0.8rem;
+      text-indent: 0;
+      font-size: 0.95rem;
+      color: #5b5146;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: #8c7d6b;
+      text-align: right;
+      margin-top: 2.4rem;
+      border-top: 1px solid #e3d9cd;
+      padding-top: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e3d9cd;
+      margin: 1.2rem 0;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+
+      .hero {
+        padding: 1.8rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .intro-block {
+        padding: 1.4rem;
+      }
+
+      .feature-grid {
+        flex-direction: column;
+      }
+
+      .footnote {
+        padding: 1.2rem 1rem;
+        border-radius: 20px;
+      }
+
+      .faq-mini {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1>mk体育</h1>
+    <div class="sub">从赛事档案到运动数据 · 一个专注体育信息整合的内容节点</div>
+  </section>
+
+  <div class="intro-block">
+    <p>当你打开一个陌生的体育类网站，最希望第一时间确认的无非两件事：这里提供什么信息？是否与自己关注的运动领域吻合？<strong>mk体育</strong> 的建设思路正是围绕这个直觉展开——它不追求大而全的门户堆砌，而是以赛事数据、赛程记录、运动项目背景作为主线，帮助用户快速判断这个站点能否成为自己日常获取体育资讯的可靠来源。</p>
+
+    <p>目前站内覆盖的内容以主流团队项目为主，同时逐步收录部分个人运动的基础数据。每一组赛果、每一段项目介绍都经过筛选与校对，力求在信息密度与阅读体验之间找到平衡。你既可以将它作为赛程查询的快捷工具，也能在页面中读到相对克制的运动文化简述——没有浮夸的口号，只有实实在在的信息陈列。</p>
+  </div>
+
+  <blockquote>
+    <p>“识别一个体育信息平台的价值，不在于它有多少栏目，而在于你是否能在一分钟内找到自己需要的那个联赛、那场比赛、那项规则。” </p>
+    <cite>—— mkgrid 内容整理笔记</cite>
+  </blockquote>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>赛程·赛果</h3>
+      <p>主要联赛与杯赛的近期赛程、完赛比分、积分走势。数据更新节奏贴合赛季进程，不堆积过时信息。</p>
+    </div>
+    <div class="feature-card">
+      <h3>运动项目简志</h3>
+      <p>每项运动均附一段背景说明，从规则演变到赛事体系，帮助新老爱好者快速建立认知坐标。</p>
+    </div>
+    <div class="feature-card">
+      <h3>分类浏览</h3>
+      <p>按运动种类、赛事级别、地区等维度组织内容，减少跳转层级，让查找更直觉。</p>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <p>如果你正在寻找一个结构清晰、没有信息噪音的体育内容页面，不妨从 <a href="https://mkgrid.com.cn" style="color:#4d3e2c; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #b3864b;">mk体育</a> 的首页开始浏览。它的设计初衷就是让“识别用途”这件事发生在你打开页面的前几秒——无论是想确认今晚的欧冠对阵，还是想了解某项运动的计分规则，你都能在干净的白底黑字之间找到答案。</p>
+
+    <p>网站目前仍在完善内容广度，但已有的版块均经过整理与核对。适合日常关注体育赛事、习惯自助查阅信息的用户。不弹窗、不强制注册、不掺杂博彩导向，只呈现运动本身的事实与脉络。</p>
+  </div>
+
+  <div class="faq-mini">
+    <details>
+      <summary>mk体育 主要关注哪些运动？</summary>
+      <p>目前以足球、篮球、网球、排球等主流团队及个人项目为主，后续计划根据数据源逐步拓展至更多运动类别。</p>
+    </details>
+    <details>
+      <summary>赛程数据多久更新一次？</summary>
+      <p>赛程与比分在主要赛季期间保持高频更新，休赛期则侧重项目介绍与历史数据整理。具体更新节奏视赛事进程而定。</p>
+    </details>
+    <details>
+      <summary>能否在这里找到历史赛季的详细数据？</summary>
+      <p>部分重点联赛保留近几季的积分与赛果，深度历史档案仍在扩充。你可以通过站内分类或搜索功能查找已有内容。</p>
+    </details>
+  </div>
+
+  <div class="footnote">
+    <p>想直接浏览目前的内容结构？请访问 <a href="https://mkgrid.com.cn">mk体育</a> · 从首页开始探索</p>
+    <p style="margin-top:0.8rem; font-size:0.85rem; color:#7a6a54;">基于信息整合与运动文化记录 · 无广告 · 无会员体系</p>
+  </div>
+
+  <div class="tagline">
+    mkgrid.com.cn · 体育信息的一个切面
+  </div>
+
+</body>
+</html>
